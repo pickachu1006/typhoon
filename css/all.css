@@ -7691,7 +7691,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .banner {
   height: 380px;
-  background-image: url(/images/banner.jpg);
+  background-image: url(../images/banner.jpg);
   background-position: center center;
   background-size: cover; }
 
