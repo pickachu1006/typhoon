@@ -1,0 +1,89 @@
+@import 'bootstrap'
+@import grid
+
+
+
+.banner
+  height: 380px
+  background-image: url(/images/banner.jpg)
+  background-position: center center
+  background-size: cover
+  
+.banner
+  background-position: center center
+  background-size: cover
+  h1
+    color: white
+    font-size: 40px
+    text-align: center
+    padding-top: 89px
+
+.filter
+  text-align: center
+  padding-top: 96px
+  select
+    width: 414px
+    height: 48px
+    font-size: 18px
+    background: rgba(255, 255, 255, 0.7)
+    border: 3px solid #FFFFFF
+    border-radius: 3px
+  +iphone
+    select
+      width: 300px
+.header
+  margin: 0 auto
+
+.info
+  padding: 10px
+  margin: 0 auto
+  background-color: #559AC8
+  box-shadow: 0 1px 3px 0
+  p
+    font-size: 18px
+    font-family: AppleSystemUIFont
+    margin: 20px 0 16px 26px
+    color: white
+
+.place-name
+  font-size: 36px
+  color: #8A82CC
+  font-family: SFNSDisplay
+  text-align: center
+
+.time
+    width: 120px
+.zone
+    width: 100px
++iphone
+  .time
+    width: 73px
+  .zone
+    width: 73px
+  
+.bottom
+  .icon
+    position: relative
+    text-align: left
+    margin: 10px 0 0 23px
+  img
+    margin-right: 9px
+
+.tag
+  position: absolute
+  right: 24px
+  top: 0
+
+.footer
+  background-color: #559AC8
+  padding: 23px 0
+  p
+    text-align: center
+    margin: 7px 0
+    font-size: 14px
+    font-family: AppleSystemUIFont
+    letter-spacing: 5px
+
+#map
+  height: 550px
+  width: 100%
