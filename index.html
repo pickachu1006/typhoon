@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FB-->
+    <meta property="og:url" content="https://pickachu1006.github.io/travel/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="颱風防災資訊平台">
+    <meta property="og:description" content="防災災情及相關諮詢電話：87863119分機8900-8907">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="images/banner.png">
+    <!-- iPhone and iPod Touch (None Retina Display)-->
+    <link href="apple-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57">
+    <!-- iPad (None Retina Display)-->
+    <link href="apple-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <!-- iPhone and iPod Touch (Retina Display)-->
+    <link href="apple-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <!-- iPad (Retina Display)-->
+    <link href="apple-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <!-- IE-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>颱風防災資訊平台</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+  </head>
+  <body>
+    <div class="container-fluid px-0 one-page">
+      <div class="header">
+        <div class="banner">
+          <div class="title-name">
+            <h1>颱風防災資訊平台</h1>
+          </div>
+          <form action="index.html" class="filter">
+            <select id="zone" name="place"></select>
+          </form>
+        </div>
+        <div class="info">
+          <p>防災災情及相關諮詢電話：87863119分機8900-8907</p>
+        </div>
+      </div>
+      <div class="main">
+        <div class="place-name my-5"></div>
+        <div class="container">
+          <div class="table-responsive-md">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col" class="time">時間</th>
+                  <th scope="col" class="zone">區域</th>
+                  <th scope="col" class="descrip">描述</th>
+                  <th scope="col" class="place">位置</th>
+                </tr>
+              </thead>
+              <tbody class="detail"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p style="color:white">颱風防災資訊平台</p>
+        <p style="color:#FFD366">資料來源：臺北市政府 消防局EOC 開放資料專區</p>
+      </div>
+    </div>
+    <div class="container d-none two-page">
+      <div class="card mt-3">
+        <div class="card-header text-center">詳細位置</div>
+        <div class="card-body text-center">
+          <div id="map"></div>
+        </div>
+        <div class="card-footer">
+          <div href="#" class="btn btn-primary d-block home-link">回上頁</div>
+        </div>
+      </div>
+    </div>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlziAsVbgC-eigXFXrPTeIc-PcW2fW9XU&amp;callback=initMap"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="js/all.js"></script>
+  </body>
+</html>
