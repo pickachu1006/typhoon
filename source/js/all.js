@@ -4,6 +4,7 @@ var detail = document.querySelector('.detail');
 var str="";
 var map;
 var position={};
+var address='';
 var mapSpot = document.querySelector('.spot');
 
 
@@ -47,14 +48,14 @@ function getData(){
                 <th class="time" >${a[i].CaseTime.slice(0,10)}</th>
                 <th class="zone" >${a[i].CaseLocationDistrict}</th>
                 <th class="descrip">${a[i].CaseDescription}</th>
-                <th class="place"><a href="#" class="btn btn-sm btn-primary m-2 google-map" data-site='{"lng":${a[i].Wgs84X},"lat":${a[i].Wgs84Y}}'>Map</a></th>   
+                <th class="place"><a href="#" class="btn btn-sm btn-primary m-2 google-map" data-address='${a[i].CaseLocationDescription}' data-site='{"lng":${a[i].Wgs84X},"lat":${a[i].Wgs84Y}}'>Map</a></th>   
             </tr>`;
             }else if(str==" 全區"){
                 detail.innerHTML+=`<tr>
                     <th class="time" >${a[i].CaseTime.slice(0,10)}</th>
                     <th class="zone" >${a[i].CaseLocationDistrict}</th>
                     <th class="descrip">${a[i].CaseDescription}</th>
-                    <th class="place"><a href="#" class="btn btn-sm btn-primary m-2 google-map" data-site='{"lng":${a[i].Wgs84X},"lat":${a[i].Wgs84Y}}'>Map</a></th>   
+                    <th class="place"><a href="#" class="btn btn-sm btn-primary m-2 google-map"  data-address='${a[i].CaseLocationDescription}' data-site='{"lng":${a[i].Wgs84X},"lat":${a[i].Wgs84Y}}'>Map</a></th>   
                 </tr>`;
                 // ${a[i].CaseLocationDescription}
             }
@@ -63,6 +64,8 @@ function getData(){
             $('.google-map').click(function (e) { 
                 e.preventDefault();
                 position=JSON.parse(this.dataset.site);
+                address=this.dataset.address
+                $('.container .card .card-header').html(address)
                 initMap();
                 $('.one-page').addClass('d-none');
                 $('.two-page').removeClass('d-none');
