@@ -6,6 +6,7 @@ var detail = document.querySelector('.detail');
 var str = "";
 var map;
 var position = {};
+var address = '';
 var mapSpot = document.querySelector('.spot'); //selector資料
 
 var zoneData = [" 全區", "中正區", "大同區", "中山區", "松山區", "大安區", "萬華區", "信義區", "士林區", "北投區", "內湖區", "南港區", "文山區"];
@@ -46,9 +47,9 @@ function getData() {
 
     for (var _i = 0; _i < len; _i++) {
       if (a[_i].CaseLocationDistrict == str) {
-        detail.innerHTML += "<tr>\n                <th class=\"time\" >".concat(a[_i].CaseTime.slice(0, 10), "</th>\n                <th class=\"zone\" >").concat(a[_i].CaseLocationDistrict, "</th>\n                <th class=\"descrip\">").concat(a[_i].CaseDescription, "</th>\n                <th class=\"place\"><a href=\"#\" class=\"btn btn-sm btn-primary m-2 google-map\" data-site='{\"lng\":").concat(a[_i].Wgs84X, ",\"lat\":").concat(a[_i].Wgs84Y, "}'>Map</a></th>   \n            </tr>");
+        detail.innerHTML += "<tr>\n                <th class=\"time\" >".concat(a[_i].CaseTime.slice(0, 10), "</th>\n                <th class=\"zone\" >").concat(a[_i].CaseLocationDistrict, "</th>\n                <th class=\"descrip\">").concat(a[_i].CaseDescription, "</th>\n                <th class=\"place\"><a href=\"#\" class=\"btn btn-sm btn-primary m-2 google-map\" data-address='").concat(a[_i].CaseLocationDescription, "' data-site='{\"lng\":").concat(a[_i].Wgs84X, ",\"lat\":").concat(a[_i].Wgs84Y, "}'>Map</a></th>   \n            </tr>");
       } else if (str == " 全區") {
-        detail.innerHTML += "<tr>\n                    <th class=\"time\" >".concat(a[_i].CaseTime.slice(0, 10), "</th>\n                    <th class=\"zone\" >").concat(a[_i].CaseLocationDistrict, "</th>\n                    <th class=\"descrip\">").concat(a[_i].CaseDescription, "</th>\n                    <th class=\"place\"><a href=\"#\" class=\"btn btn-sm btn-primary m-2 google-map\" data-site='{\"lng\":").concat(a[_i].Wgs84X, ",\"lat\":").concat(a[_i].Wgs84Y, "}'>Map</a></th>   \n                </tr>"); // ${a[i].CaseLocationDescription}
+        detail.innerHTML += "<tr>\n                    <th class=\"time\" >".concat(a[_i].CaseTime.slice(0, 10), "</th>\n                    <th class=\"zone\" >").concat(a[_i].CaseLocationDistrict, "</th>\n                    <th class=\"descrip\">").concat(a[_i].CaseDescription, "</th>\n                    <th class=\"place\"><a href=\"#\" class=\"btn btn-sm btn-primary m-2 google-map\"  data-address='").concat(a[_i].CaseLocationDescription, "' data-site='{\"lng\":").concat(a[_i].Wgs84X, ",\"lat\":").concat(a[_i].Wgs84Y, "}'>Map</a></th>   \n                </tr>"); // ${a[i].CaseLocationDescription}
       }
     }
 
@@ -56,6 +57,8 @@ function getData() {
       $('.google-map').click(function (e) {
         e.preventDefault();
         position = JSON.parse(this.dataset.site);
+        address = this.dataset.address;
+        $('.container .card .card-header').html(address);
         initMap();
         $('.one-page').addClass('d-none');
         $('.two-page').removeClass('d-none');
